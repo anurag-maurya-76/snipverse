@@ -4,14 +4,14 @@ import { LANGUAGE_CONFIG } from "../_constants";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { ChevronDownIcon, Lock, Sparkles } from "lucide-react";
-import { useCoderEditorStore } from "@/store/useCodeEditorStore";
+import { useCodeEditorStore } from "@/store/useCodeEditorStore";
 import useMounted from "@/hooks/useMounted";
 
 function LanguageSelector({ hasAccess }: { hasAccess: boolean }) {
   const [isOpen, setIsOpen] = useState(false);
   const mounted = useMounted();
 
-  const { language, setLanguage } = useCoderEditorStore();
+  const { language, setLanguage } = useCodeEditorStore();
   const dropdownRef = useRef<HTMLDivElement>(null);
   const currentLanguageObj = LANGUAGE_CONFIG[language];
 

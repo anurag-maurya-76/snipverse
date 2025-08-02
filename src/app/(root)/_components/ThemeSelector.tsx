@@ -11,7 +11,7 @@ import {
   Palette,
   Sun,
 } from "lucide-react";
-import { useCoderEditorStore } from "@/store/useCodeEditorStore";
+import { useCodeEditorStore } from "@/store/useCodeEditorStore";
 import useMounted from "@/hooks/useMounted";
 
 const THEME_ICONS: Record<string, React.ReactNode> = {
@@ -25,7 +25,7 @@ const THEME_ICONS: Record<string, React.ReactNode> = {
 export default function ThemeSelector() {
   const [isOpen, setIsOpen] = useState(false);
   const mounted = useMounted();
-  const { theme, setTheme } = useCoderEditorStore();
+  const { theme, setTheme } = useCodeEditorStore();
   const dropdownRef = useRef<HTMLDivElement>(null);
   const currentTheme = THEMES.find((t) => t.id === theme);
 
