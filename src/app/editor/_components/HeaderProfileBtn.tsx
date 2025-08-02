@@ -1,5 +1,6 @@
 "use client";
-import { SignedOut, SignInButton } from "@clerk/clerk-react";
+import LoginButton from "@/components/LoginButton";
+import { SignedOut } from "@clerk/clerk-react";
 import { UserButton } from "@clerk/nextjs";
 import { User } from "lucide-react";
 
@@ -16,7 +17,7 @@ export default function HeaderProfileBtn() {
         </UserButton.MenuItems>
       </UserButton>
       <SignedOut>
-        <SignInButton />
+        <LoginButton />
       </SignedOut>
     </>
   );

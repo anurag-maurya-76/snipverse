@@ -1,21 +1,12 @@
-import { currentUser } from "@clerk/nextjs/server";
-import { ConvexHttpClient } from "convex/browser";
-import { api } from "../../../../convex/_generated/api";
 import Link from "next/link";
 import { Blocks, Code2 } from "lucide-react";
 import { SignedIn } from "@clerk/nextjs";
-import RunButton from "./RunButton";
 import ThemeSelector from "./ThemeSelector";
 import LanguageSelector from "./LanguageSelector";
+import RunButton from "./RunButton";
 import HeaderProfileBtn from "./HeaderProfileBtn";
 
 async function Header() {
-  const convex = new ConvexHttpClient(process.env.NEXT_PUBLIC_CONVEX_URL || "");
-  const user = await currentUser();
-  const convexUser = await convex.query(api.user.getUser, {
-    userId: user?.id || "",
-  });
-  console.log("convexUser", convexUser);
   return (
     <div className="relative z-10">
       <div
@@ -41,17 +32,18 @@ async function Header() {
 
             <div className="flex flex-col">
               <span className="block text-lg font-semibold bg-gradient-to-r from-blue-400 via-blue-300 to-purple-400 text-transparent bg-clip-text">
-                SnipVerse
+                CodeCraft
               </span>
               <span className="block text-xs text-blue-400/60 font-medium">
                 Interactive Code Editor
               </span>
             </div>
           </Link>
+
           {/* Navigation */}
           <nav className="flex items-center space-x-1">
             <Link
-              href="/snippets"
+              href="/"
               className="relative group flex items-center gap-2 px-4 py-1.5 rounded-lg text-gray-300 bg-gray-800/50 
                 hover:bg-blue-500/10 border border-gray-800 hover:border-blue-500/50 transition-all duration-300 shadow-lg overflow-hidden"
             >
@@ -69,6 +61,7 @@ async function Header() {
             </Link>
           </nav>
         </div>
+
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-3">
             <ThemeSelector />

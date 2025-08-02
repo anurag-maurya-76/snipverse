@@ -3,6 +3,7 @@ import { Id } from "../../convex/_generated/dataModel";
 import { useMutation, useQuery } from "convex/react";
 import { api } from "../../convex/_generated/api";
 import { Star } from "lucide-react";
+import toast from "react-hot-toast";
 
 function StarButton({ snippetId }: { snippetId: Id<"snippets"> }) {
   const { isSignedIn } = useAuth();
@@ -12,7 +13,10 @@ function StarButton({ snippetId }: { snippetId: Id<"snippets"> }) {
   const star = useMutation(api.snippets.starSnippet);
 
   const handleStar = async () => {
-    if (!isSignedIn) return;
+    if (!isSignedIn) {
+      toast.error("Sign in to star snippets");
+      return;
+    }
     await star({ snippetId });
   };
 

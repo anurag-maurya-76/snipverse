@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { LANGUAGE_CONFIG } from "../_constants";
+import { LANGUAGE_CONFIG } from "../../(root)/_constants";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { ChevronDownIcon, Sparkles } from "lucide-react";

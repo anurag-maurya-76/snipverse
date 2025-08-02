@@ -1,7 +1,7 @@
 "use client";
 import { useCodeEditorStore } from "@/store/useCodeEditorStore";
 import { useEffect, useState } from "react";
-import { defineMonacoThemes, LANGUAGE_CONFIG } from "../_constants";
+import { defineMonacoThemes, LANGUAGE_CONFIG } from "../../(root)/_constants";
 import { Editor } from "@monaco-editor/react";
 import { motion } from "framer-motion";
 import Image from "next/image";

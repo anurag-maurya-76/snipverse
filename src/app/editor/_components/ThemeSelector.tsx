@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { THEMES } from "../_constants";
+import { THEMES } from "../../(root)/_constants";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   CircleOff,

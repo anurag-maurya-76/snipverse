@@ -17,8 +17,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Snip Verse",
+  title: "SnipVerse",
   description: "Share and discover code snippets",
+  icons: {
+    icon: "/snipverse.png",
+  },
 };
 
 export default function RootLayout({
